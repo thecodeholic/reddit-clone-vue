@@ -7,15 +7,11 @@
 <script>
 import Post from "@/components/Post";
 
-import {createNamespacedHelpers} from 'vuex';
-
-const {mapState} = createNamespacedHelpers('posts');
-
 export default {
 name: "Posts",
   components: {Post},
-  computed: {
-    ...mapState(['posts'])
+  props: {
+    posts: Array
   }
 }
 </script>

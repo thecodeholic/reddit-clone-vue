@@ -1,6 +1,9 @@
 /**
  * Created by TheCodeholic on 8/1/2020.
  */
+import httpClient from "@/plugins/axios";
+import {SET_POSTS} from "@/vuex/modules/mutation-types";
+
 const posts = {
   namespaced: true,
   state: {
@@ -56,10 +59,15 @@ const posts = {
     ]
   },
   actions: {
-
+    async getPosts({commit}) {
+      const {status, data} = await httpClient.get('/post')
+      if (status === 200) {
+        commit(SET_POSTS, data)
+      }
+    }
   },
   mutations: {
-
+    [SET_POSTS]: (state, posts) => state.posts = posts
   }
 }
 
