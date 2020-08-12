@@ -2,7 +2,7 @@
  * Created by TheCodeholic on 8/1/2020.
  */
 import httpClient from "@/plugins/axios";
-import {SET_POSTS} from "@/vuex/modules/mutation-types";
+export const SET_POSTS = 'SET_POSTS';
 
 const posts = {
   namespaced: true,
