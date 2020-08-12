@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="light" variant="light">
-      <b-navbar-brand href="#">
+      <b-navbar-brand :to="{name: 'Home'}">
         reddit
       </b-navbar-brand>
 

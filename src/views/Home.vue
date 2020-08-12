@@ -1,14 +1,14 @@
 <template>
   <div class="home">
-    Home
+    <posts />
   </div>
 </template>
 
 <script>
 
+import Posts from "@/components/Posts";
 export default {
   name: 'Home',
-  components: {
-  }
+  components: {Posts},
 }
 </script>
