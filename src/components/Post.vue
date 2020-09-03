@@ -6,7 +6,7 @@
           <i class="fas fa-arrow-up"></i>
         </b-button>
         <span class="upvotes">
-          345
+          {{post.upvotes}}
         </span>
         <b-button variant="light" class="btn-downvote">
           <i class="fas fa-arrow-down"></i>
@@ -15,7 +15,7 @@
       <div class="col-media d-flex justify-content-center align-items-center p-2">
         <b-img v-if="post.type === 'media' && post.image" :src="post.image" fluid/>
         <video v-if="post.type === 'media' && post.video" :src="post.video"></video>
-        <a v-if="post.type === 'link' && post.link" :href="post.link">
+        <a v-if="post.type === 'link' && post.link" :href="post.link" target="_blank">
           <b-icon icon="link"></b-icon>
         </a>
       </div>
@@ -28,7 +28,8 @@
         <div class="post-info flex-fill">
           <router-link to="/"><b>r/{{ post.subreddit.name }}</b></router-link>
           <span class="text-muted">
-            Posted by <router-link to="/">u/{{ post.user.username }}</router-link> 6 hours ago
+            Posted by <router-link to="/">u/{{ post.user.username }}</router-link>
+            {{post.create_date | moment("from")}}
           </span>
         </div>
         <div class="post-actions">

@@ -62,7 +62,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .navbar-search {
   width: auto;
   flex: 1;
